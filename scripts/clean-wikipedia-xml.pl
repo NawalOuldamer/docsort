@@ -1,13 +1,20 @@
 #!/usr/bin/perl
 
 # Program to filter Wikipedia XML dumps to "clean" text consisting only of lowercase
-# letters (a-z, converted from A-Z), and spaces (never consecutive).  
+# letters (a-z, converted from A-Z), and spaces (never consecutive).
 # All other characters are converted to spaces.  Only text which normally appears 
 # in the web browser is displayed.  Tables are removed.  Image captions are 
 # preserved.  Links are converted to normal text.  Digits are spelled out.
-
+ 
 # Written by Matt Mahoney, June 10, 2006.  This program is released to the public domain.
 # Source URL: http://mattmahoney.net/dc/textdata.html
+
+use v5.14;
+use warnings qw( FATAL utf8 );
+use utf8;
+use open qw( :encoding(UTF-8) :std );
+
+my $text = 0;
 
 $/=">";                     # input record separator
 while (<>) {
@@ -52,9 +59,7 @@ while (<>) {
     s/8/ huit /g;
     s/9/ neuf /g;
 
-    #tr/a-z/ /cs; remove accents, not good for french!
-    s/[\'\=\,\(\)\.\!\*\’\:]/ /g; # temp solution for quick test
-
+    s/[\P{L}]+/ /g; # remove all chars not matching a-z (with accents)
     chop;
     print $_;
   }
