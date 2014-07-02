@@ -41,17 +41,20 @@ while (<>) {
     # convert to lowercase letters and spaces, spell digits
     $_=" $_ ";
     tr/A-Z/a-z/;
-    s/0/ zero /g;
-    s/1/ one /g;
-    s/2/ two /g;
-    s/3/ three /g;
-    s/4/ four /g;
-    s/5/ five /g;
+    s/0/ zéro /g;
+    s/1/ un /g;
+    s/2/ deux /g;
+    s/3/ trois /g;
+    s/4/ quatre /g;
+    s/5/ cinq /g;
     s/6/ six /g;
-    s/7/ seven /g;
-    s/8/ eight /g;
-    s/9/ nine /g;
-    tr/a-z/ /cs;
+    s/7/ sept /g;
+    s/8/ huit /g;
+    s/9/ neuf /g;
+
+    #tr/a-z/ /cs; remove accents, not good for french!
+    s/[\'\=\,\(\)\.\!\*\’\:]/ /g; # temp solution for quick test
+
     chop;
     print $_;
   }
