@@ -91,7 +91,7 @@ int elmPredict( double *X, int dims, int nsmp,
 // --------------------------
 
 // compares two integer values
-// int compare( const void* a, const void *b ) {
+//int compare( const void* a, const void *b ) {
 //	return ( *(int *) a - *(int *) b );
 //}
 
