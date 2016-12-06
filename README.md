@@ -16,7 +16,7 @@ Usage on Ubuntu:
 
 `make`
 
-`time ./word2vec -train ../../data_word2vec/outclean1m8.txt -output ../../data_word2vec/w2v1m8_300 -size 300 -sample 1e-4 -threads 25 -binary 1 -iter 2`
+`time ./word2vec -train ../../data_word2vec/outclean1m8.txt -output ../../data_word2vec/w2v1m8_300 -size 300 -binary 1 -iter 2`
 
 `./distance ../../data_word2vec/w2v1m8_300`
 
