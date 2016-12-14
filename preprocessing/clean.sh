@@ -6,7 +6,7 @@
 
 
 # USAGE:
-# bash clean.sh out.txt > outclean.txt
+# bash clean.sh out.txt > out_cleaned.txt
 
 #    sed -e 's/\.//g'  -e 's/\,//g' -e 's/  / /g' "$1" | tr 'A-Z' 'a-z'
 # sed 's|||g' |
@@ -35,7 +35,7 @@ while IFS='' read -r line || [[ -n "$line" ]]; do
     sed 's|\!| |g' |
     sed 's|\?| |g' |
     sed 's|\;| |g' |
-    tr -cd '\00-\255' |
+    tr -cd '\00-\255' |  # to suppress chinese characters and others...
     tr 'A-Z' 'a-z' |
     sed -e 's/0/ zero /g' |
     sed -e 's/1/ one /g' |

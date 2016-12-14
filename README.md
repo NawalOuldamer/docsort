@@ -13,11 +13,10 @@ Usage on Ubuntu:
 
 `### On Mac:`
 `### brew install gcc`
-`### replace #include <malloc.h> by #include <stdlib.h>`
 
 `make`
 
-`time ./word2vec -train ../../data/frwiki-20140608-pages-articles-multistream-200Mo.txt -output ../../data/wiki300d -size 300 -threads 25 -binary 1`
+`time ./word2vec -train ../../data_word2vec/outclean1m8.txt -output ../../data_word2vec/w2v1m8_300 -size 300 -binary 1 -iter 2`
 
-`./distance ../../dataOuord2vect/wiki300d`
+`./distance ../../data_word2vec/w2v1m8_300`
 
