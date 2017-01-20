@@ -8,7 +8,7 @@
 from pymongo import MongoClient
 import pandas as pd
 import time
-data_root = "/Users/matthieu/Documents/data_word2vec/"
+data_root = "/Users/`whoami`/Code/data_word2vec/"
 
 n_lim = 1800000
 
